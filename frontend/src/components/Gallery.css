@@ -1,0 +1,117 @@
+/* General Styling */
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    font-family: 'Arial', sans-serif;
+    background-color: #111;
+    color: #1e1e1e;
+  }
+  
+  .gallery-page {
+    width: 100%;  /* Make sure it doesn't exceed the viewport width */
+    padding: 0;
+    margin: 0;
+    color: white;
+  }
+  
+  /* Header Section */
+  .gallery-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background-color: #1b1b1b;
+    box-sizing: border-box;
+    width: 100%;
+  }
+  
+  .logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+  }
+  
+  .gallery-nav {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .gallery-actions {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .search-bar {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+  }
+  
+  /* Sort and Filter Section */
+  .gallery-sort-filter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    box-sizing: border-box;
+    width: 100%;
+  }
+  
+  .sort-dropdown {
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+  }
+  
+  /* Gallery Grid */
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Grid that adapts to screen size */
+    gap: 20px;
+    padding: 0 40px 40px 40px;
+    box-sizing: border-box;
+    width: 100%;
+  }
+  
+  .gallery-item {
+    background-color: #1b1b1b;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .gallery-item img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+  }
+  
+  .gallery-item:hover {
+    transform: scale(1.05);
+  }
+  
+  /* Links in the header */
+  .gallery-actions a {
+    color: #fff; /* Set default link color to white */
+  }
+  
+  .gallery-actions a:hover {
+    text-decoration: underline; /* Optional: Underline on hover */
+  }
+  
+  /* Ensure visited, active, and focused links stay white */
+  .gallery-actions a:visited {
+    color: #fff;
+  }
+  
+  .gallery-actions a:active {
+    color: #fff;
+  }
+  
+  .gallery-actions a:focus {
+    color: #fff;
+  }
