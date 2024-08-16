@@ -1,38 +1,57 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom'; // Import Link from react-router-dom
+import { useNavigate } from 'react-router-dom'; // Importing useNavigate from react-router-dom
 import './Login.css'; // Ensure your CSS file is linked
 
 const Login = () => {
-  const [isRegister, setIsRegister] = useState(false); // Toggle between login and register
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [confirmPassword, setConfirmPassword] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
+  const navigate = useNavigate();
 
-  const handleLogin = (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
-    console.log('Logging in with:', { email, password });
-  };
 
-  const handleRegister = (e) => {
-    e.preventDefault();
-    if (password !== confirmPassword) {
-      alert("Passwords don't match!");
-      return;
+    try {
+      const response = await fetch('http://localhost:5000/api/auth/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email, password }),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        // Store the token or user info in localStorage/sessionStorage
+        localStorage.setItem('token', data.token);
+
+        // Redirect the user after successful login
+        navigate('/gallery');
+      } else {
+        // Handle failed login attempt
+        setErrorMessage(data.message || 'Login failed. Please try again.');
+      }
+    } catch (error) {
+      setErrorMessage('Something went wrong. Please try again later.');
+      console.error('Login Error:', error);
     }
-    console.log('Registering with:', { email, password });
   };
 
   return (
     <div className="login-page">
-      {/* Header with Back to Gallery Link */}
       <header className="login-header">
-        <Link to="/gallery" className="back-link">Back to Gallery</Link>
+        <button className="back-link" onClick={() => navigate('/gallery')}>
+          Back to Gallery
+        </button>
       </header>
 
       <div className="login-container">
-        <h1>{isRegister ? 'Register' : 'Login'}</h1>
+        <h1>Login</h1>
 
-        <form onSubmit={isRegister ? handleRegister : handleLogin}>
+        {errorMessage && <p className="error-message">{errorMessage}</p>}
+
+        <form onSubmit={handleLogin}>
           <div className="input-group">
             <label htmlFor="email">Email</label>
             <input
@@ -55,34 +74,14 @@ const Login = () => {
             />
           </div>
 
-          {isRegister && (
-            <div className="input-group">
-              <label htmlFor="confirmPassword">Confirm Password</label>
-              <input
-                type="password"
-                id="confirmPassword"
-                value={confirmPassword}
-                onChange={(e) => setConfirmPassword(e.target.value)}
-                required
-              />
-            </div>
-          )}
-
-          <button type="submit">{isRegister ? 'Register' : 'Login'}</button>
+          <button type="submit">Login</button>
         </form>
 
         <div className="toggle-form">
-          {isRegister ? (
-            <p>
-              Already have an account?{' '}
-              <button onClick={() => setIsRegister(false)}>Log in</button>
-            </p>
-          ) : (
-            <p>
-              Don't have an account?{' '}
-              <button onClick={() => setIsRegister(true)}>Register</button>
-            </p>
-          )}
+          <p>
+            Don't have an account?{' '}
+            <button onClick={() => navigate('/register')}>Register</button>
+          </p>
         </div>
       </div>
     </div>
