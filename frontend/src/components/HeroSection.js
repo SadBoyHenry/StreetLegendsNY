@@ -12,7 +12,7 @@ const HeroSection = () => {
   return (
     <div className="hero-container">
       <video src="/32 Legendary Goals in Football History.mp4" autoPlay loop muted />
-      <h1>SoccerLegendsNY</h1>
+      <h1>StreetLegendsNY</h1>
       <button onClick={handleButtonClick}>View Our Gallery</button>
     </div>
   );
