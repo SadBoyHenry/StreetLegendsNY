@@ -1,0 +1,199 @@
+/* Contact Section */
+.contact-section {
+  background-color: #d3d3d3; /* Match the home page background */
+  padding: 40px 20px;
+}
+
+/* Contact Content */
+.contact-content {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  gap: 30px;
+}
+
+/* Contact Left */
+.contact-left {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.contact-left h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #333;
+  text-transform: capitalize;
+  line-height: 1.2;
+  letter-spacing: 1px;
+}
+
+/* Contact Right */
+.contact-right {
+  flex: 1;
+}
+
+.contact-right p {
+  margin-bottom: 20px;
+  font-size: 1rem;
+  color: #666;
+  line-height: 1.6;
+  font-weight: 300;
+}
+
+/* Form Container */
+.form-container {
+  background-color: #d3d3d3; /* Match the home page background */
+  padding: 20px;
+  border-radius: 8px; /* Slightly smaller border-radius */
+  border: 0.5px solid #c0c0c0; /* Thinner, more subtle border */
+  transition: transform 0.3s ease;
+}
+
+.form-container:hover {
+  transform: translateY(-3px);
+}
+
+/* Contact Form */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Form Group */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Input Wrapper */
+.input-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.input-wrapper label {
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: #333;
+  letter-spacing: 0.5px;
+}
+
+.input-wrapper input,
+.input-wrapper textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #b0b0b0;
+  border-radius: 6px;
+  font-size: 14px;
+  outline: none;
+  background-color: #fff;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.input-wrapper input:focus,
+.input-wrapper textarea:focus {
+  border-color: #333;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+}
+
+.input-wrapper textarea {
+  height: 100px;
+  resize: vertical;
+}
+
+/* Submit Button */
+.contact-form button {
+  padding: 10px 20px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+  cursor: pointer;
+  align-self: flex-end;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.contact-form button:hover {
+  background-color: #555;
+  transform: scale(1.03);
+}
+
+.button-arrow {
+  font-size: 16px;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .contact-section {
+    padding: 30px 15px;
+  }
+
+  .contact-content {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .contact-left h2 {
+    font-size: 1.8rem;
+    text-align: center;
+  }
+
+  .contact-right {
+    padding-left: 0;
+  }
+
+  .contact-right p {
+    font-size: 0.9rem;
+    text-align: center;
+  }
+
+  .form-container {
+    padding: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-section {
+    padding: 20px 10px;
+  }
+
+  .contact-left h2 {
+    font-size: 1.3rem;
+  }
+
+  .contact-right p {
+    font-size: 0.85rem;
+  }
+
+  .input-wrapper input,
+  .input-wrapper textarea {
+    padding: 8px 10px;
+    font-size: 13px;
+  }
+
+  .input-wrapper textarea {
+    height: 80px;
+  }
+
+  .contact-form button {
+    padding: 8px 16px;
+    font-size: 13px;
+  }
+
+  .button-arrow {
+    font-size: 14px;
+  }
+}

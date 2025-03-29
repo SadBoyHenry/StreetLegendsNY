@@ -1,0 +1,227 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    color: #333;
+  }
+  
+  /* Home Container */
+  .home-container {
+    width: 100%;
+    min-height: 100vh;
+    background-color: #d3d3d3;
+  }
+  
+  /* Hero Section */
+  .hero-section {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    color: #fff;
+  }
+  
+  /* Overlay for Better Text Visibility */
+  .hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+  }
+  
+  /* Background Video Styling */
+  .hero-section video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+  }
+  
+  /* Hero Header */
+  .hero-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background-color: #000; /* Black background */
+    border-bottom: 1px solid #333; /* Darker border for contrast */
+    z-index: 10;
+  }
+  
+  .logo {
+    font-size: 24px;
+    font-weight: 700;
+    text-decoration: none;
+    color: #fff; /* White text */
+    text-transform: uppercase;
+  }
+  
+  .logo:hover {
+    color: #ddd; /* Slightly lighter white on hover */
+  }
+  
+  .hero-actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .search-bar {
+    padding: 8px 12px;
+    border: 1px solid #333; /* Darker border for contrast */
+    border-radius: 4px;
+    font-size: 14px;
+    outline: none;
+    background-color: #fff; /* White background for the search bar */
+    color: #333; /* Dark text for readability */
+  }
+  
+  .search-bar:focus {
+    border-color: #666; /* Slightly lighter border on focus */
+  }
+  
+  .icon {
+    font-size: 20px;
+    color: #fff; /* White icons */
+  }
+  
+  .icon:hover {
+    color: #ddd; /* Slightly lighter white on hover */
+  }
+  
+  /* Hero Section Heading */
+  .hero-section h1 {
+    z-index: 2;
+    font-size: 5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 20px;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+  }
+  
+  /* Gallery Section */
+  .gallery-section {
+    background-color: #d3d3d3;
+    padding: 40px 20px;
+  }
+  
+  .gallery-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  .gallery-content h2 {
+    font-size: 36px;
+    font-weight: 700;
+    text-transform: capitalize;
+    margin-bottom: 40px;
+  }
+  
+  /* Gallery Grid */
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+  }
+  
+  .gallery-item {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+  }
+  
+  .gallery-item:hover {
+    transform: scale(1.02);
+  }
+  
+  .gallery-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    margin-bottom: 15px;
+  }
+  
+  .gallery-item h3 {
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+  }
+  
+  .gallery-item p {
+    font-size: 14px;
+    color: #666;
+  }
+  
+  /* Mobile Responsiveness */
+  @media (max-width: 768px) {
+    .hero-section {
+      height: 80vh;
+    }
+  
+    .hero-section h1 {
+      font-size: 3rem;
+      margin-bottom: 15px;
+    }
+  
+    .hero-header {
+      flex-direction: column;
+      gap: 15px;
+      padding: 15px 20px;
+    }
+  
+    .gallery-content h2 {
+      font-size: 24px;
+    }
+  
+    .gallery-grid {
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .hero-section {
+      height: 70vh;
+    }
+  
+    .hero-section h1 {
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+  
+    .hero-actions {
+      flex-direction: column;
+      gap: 10px;
+    }
+  
+    .search-bar {
+      width: 100%;
+    }
+  }
